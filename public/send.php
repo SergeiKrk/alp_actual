@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Отправка письма
         $mail->setFrom('zakaz@uslugialpinista.ru', 'UslugiAlpinista заявка');
-        $mail->addAddress('ksv.ulru@gmail.com', 'Получатель'); // Адрес получателя
+        $mail->addAddress('alekcei.9@mail.ru', 'Получатель'); // Адрес получателя
 
         // Настройки письма
         $mail->isHTML(true);

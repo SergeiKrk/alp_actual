@@ -40,12 +40,21 @@ const { main }: { main: NavigationLink[] } = menu;
     <div class="hidden sm:block">
       <ul class="flex items-center gap-6">
         <li>
-          <a class="text-sm" href="tel:+79372758313"> +7 937 275 83 13</a>
+          <a class="text-sm" href={config.site.phone_org}> +7 937 275 83 13</a>
         </li>
         <li>
           <a
             class="inline-flex h-10 w-10 items-center justify-center rounded-full text-center text-gray-800 transition hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-            href="https://t.me/uslugialpinista"
+            href={config.site.max_org}
+          >
+            <span class="sr-only">Max</span>
+            <TelegramIcon />
+          </a>
+        </li>
+        <li>
+          <a
+            class="inline-flex h-10 w-10 items-center justify-center rounded-full text-center text-gray-800 transition hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+            href={config.site.telegram_org}
           >
             <span class="sr-only">Telegram</span>
             <TelegramIcon />
@@ -54,7 +63,7 @@ const { main }: { main: NavigationLink[] } = menu;
         <li>
           <a
             class="inline-flex h-10 w-10 items-center justify-center rounded-full text-center text-gray-800 transition hover:bg-green-300 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-            href="https://wa.me/79372758313"
+            href={config.site.whatsapp_org}
           >
             <span class="sr-only">Whatsapp</span>
             <WhatsappIcon />

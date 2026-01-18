@@ -1,5 +1,6 @@
 ---
 import config from '@config/config.json';
+import MaxIcon from '@components/icons/MaxIcon.astro';
 import TelegramIcon from '@components/icons/TelegramIcon.astro';
 import VkIcon from '@components/icons/VkIcon.astro';
 import WhatsappIcon from '@components/icons/WhatsappIcon.astro';
@@ -17,6 +18,13 @@ const year = new Date().getFullYear();
     </div>
 
     <div class="mt-1 space-x-2">
+      <a
+        class="inline-flex h-6 w-6 mr-3 items-center justify-center rounded-full text-center dark:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+        href={config.site.max_org}
+      >
+        <span class="sr-only">Max</span>
+        <MaxIcon />
+      </a>
       <a
         class="inline-flex h-10 w-10 items-center justify-center rounded-full text-center text-gray-800 transition hover:bg-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
         href="https://vk.com/height99"

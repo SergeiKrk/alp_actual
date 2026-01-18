@@ -2,10 +2,17 @@
 import config from '@config/config.json';
 import social from '@config/social';
 const socialItems = social.networks;
+import MaxIcon from '@components/icons/MaxIcon.astro';
+import TelegramIcon from '@components/icons/TelegramIcon.astro';
 ---
 
 <div class="fixed bottom-12 right-7 z-50 block lg:hidden">
   <ul class="flex flex-col gap-3">
+    <li class="flex items-center justify-center">
+      <a class="w-12 h-12" href={config.site.max_org} aria-label="Max для связи">
+        <MaxIcon />
+      </a>
+    </li>
     <li class="flex items-center justify-center">
       <a href={config.site.telegram_org} aria-label="telegram для связи">
         <svg

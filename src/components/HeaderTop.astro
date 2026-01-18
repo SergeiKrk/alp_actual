@@ -5,9 +5,8 @@ import config from '@config/config.json';
 import menu from '@config/menu.json';
 import TelegramIcon from '@components/icons/TelegramIcon.astro';
 import WhatsappIcon from '@components/icons/WhatsappIcon.astro';
-import CloseIcon from '@icons/CloseIcon.astro';
-import HomeIcon from '@icons/HomeIcon.astro';
 import ThemeIcon from '@components/ThemeIcon.astro';
+import MaxIcon from '@components/icons/MaxIcon.astro';
 
 export interface ChildNavigationLink {
   name: string;
@@ -57,15 +56,24 @@ const { pathname } = Astro.url;
             <li>
               <a
                 class="text-sm font-bold text-cyan-800/100 hover:text-teal-500 dark:text-white/100 md:mr-4"
-                href="tel:+79372758313"
+                href={config.site.phone_org}
               >
                 +7 937 275 83 13</a
               >
             </li>
             <li>
               <a
+                class="inline-flex h-6 w-6 pt-2 mr-2 items-center justify-center rounded-full text-center text-gray-700 transition hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                href={config.site.max_org}
+              >
+                <span class="sr-only">Max</span>
+                <MaxIcon />
+              </a>
+            </li>
+            <li>
+              <a
                 class="inline-flex h-10 w-10 items-center justify-center rounded-full text-center text-gray-700 transition hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-                href="https://t.me/uslugialpinista"
+                href={config.site.telegram_org}
               >
                 <span class="sr-only">Telegram</span>
                 <TelegramIcon />
@@ -74,7 +82,7 @@ const { pathname } = Astro.url;
             <li>
               <a
                 class="inline-flex h-10 w-10 items-center justify-center rounded-full text-center text-gray-700 transition hover:bg-green-300 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-                href="https://wa.me/79372758313"
+                href={config.site.whatsapp_org}
               >
                 <span class="sr-only">Whatsapp</span>
                 <WhatsappIcon />
