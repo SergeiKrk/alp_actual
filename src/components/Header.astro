@@ -1,0 +1,135 @@
+---
+import { Image } from 'astro:assets';
+import config from '@config/config.json';
+import TelegramIcon from '@components/icons/TelegramIcon.astro';
+import WhatsappIcon from '@components/icons/WhatsappIcon.astro';
+import menu from '@config/menu.json';
+import HamburgerIcon from '@icons/HamburgerIcon.astro';
+import CloseIcon from '@icons/CloseIcon.astro';
+import HomeIcon from '@icons/HomeIcon.astro';
+import ThemeIcon from '@components/ThemeIcon.astro';
+
+export interface NavigationLink {
+  name: string;
+  url: string;
+}
+
+const { main }: { main: NavigationLink[] } = menu;
+---
+
+<header
+  id="page-header"
+  class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent py-2 pl-6 pr-8 text-white lg:pl-8"
+>
+  <a class="hover:!text-default flex items-center gap-1" href="/">
+    <figure>
+      <Image
+        src={config.site.logo}
+        alt={config.site.title}
+        class="w-16 rounded bg-zinc-950"
+        width={512}
+        height={512}
+        decoding="async"
+        loading="lazy"
+      />
+    </figure>
+    <span class="ml-4 hidden sm:block">{config.site.brand}</span>
+  </a>
+
+  <div class="flex items-center gap-6 lg:order-last">
+    <div class="hidden sm:block">
+      <ul class="flex items-center gap-6">
+        <li>
+          <a class="text-sm" href="tel:+79372758313"> +7 937 275 83 13</a>
+        </li>
+        <li>
+          <a
+            class="inline-flex h-10 w-10 items-center justify-center rounded-full text-center text-gray-800 transition hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+            href="https://t.me/uslugialpinista"
+          >
+            <span class="sr-only">Telegram</span>
+            <TelegramIcon />
+          </a>
+        </li>
+        <li>
+          <a
+            class="inline-flex h-10 w-10 items-center justify-center rounded-full text-center text-gray-800 transition hover:bg-green-300 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+            href="https://wa.me/79372758313"
+          >
+            <span class="sr-only">Whatsapp</span>
+            <WhatsappIcon />
+          </a>
+        </li>
+        <li class="pt-2">{config.features.dark_mode && <ThemeIcon />}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="">
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label id="show-button" for="nav-toggle" class="order-2 flex cursor-pointer items-center text-zinc-400 md:hidden">
+      <HamburgerIcon />
+    </label>
+    <label id="hide-button" for="nav-toggle" class="order-2 hidden cursor-pointer items-center text-zinc-400">
+      <CloseIcon />
+    </label>
+    <div
+      id="nav-menu"
+      class="fixed right-0 top-16 z-10 mt-2 hidden w-full divide-y divide-zinc-100 rounded-md border border-zinc-100 bg-white p-2 shadow-lg dark:border-zinc-900 dark:bg-zinc-800"
+    >
+      <ul class="py-2 text-center text-lg text-zinc-700 dark:text-zinc-200">
+        {
+          main?.map((menu) => (
+            <li>
+              <a
+                href={menu?.url}
+                class="block rounded-lg px-4 py-2 text-xl text-zinc-700 hover:bg-zinc-50 hover:text-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-200 dark:hover:text-zinc-800"
+              >
+                {menu?.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <ul class="ml-auto hidden items-center gap-6 md:flex lg:flex">
+      {
+        main?.map((menu) => (
+          <li class="text-md block rounded-lg px-2 py-2 text-zinc-500 transition-all hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-200">
+            <a href={menu?.url} class="relative flex items-center">
+              {menu?.name === 'Home' ? <HomeIcon /> : menu?.name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector('#page-header') as HTMLElement;
+  const page = document.documentElement;
+
+  document.addEventListener('scroll', () => {
+    const d = page.clientHeight - page.scrollTop - header.offsetHeight;
+    header.classList.toggle('fixed-header', d < 0);
+  });
+</script>
+
+<noscript>
+  <style>
+    #open-nav-button {
+      display: none;
+    }
+  </style>
+</noscript>
+
+<style>
+  .fixed-header {
+    @apply fixed bottom-auto top-10;
+    @apply text-white;
+  }
+  .modal.is-open {
+    @apply block;
+  }
+</style>

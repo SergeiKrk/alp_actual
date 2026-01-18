@@ -1,0 +1,28 @@
+{
+  "site": {
+    "title": "Промышленный альпинист | Услуги альпиниста в Ульяновске",
+    "brand": "ПромАльпВысота",
+    "phone_org": "tel:+79372758313",
+    "telegram_org": "https://t.me/uslugialpinista",
+    "whatsapp_org": "https://wa.me/79372758313",
+    "base_url": "https://uslugialpinista.ru",
+    "base_path": "/",
+    "favicon": "/images/logo150grad.png",
+    "logo": "/images/logo150grad.png",
+    "lang": "ru",
+    "description": "Профессиональные услуги промышленных альпинистов в Ульяновске. Высокое качество, все допуски, свои инструменты, бесплатный выезд на замер.",
+    "pageSize": 6
+  },
+  "features": {
+    "youtube": true,
+    "dark_mode": true
+  },
+  "metadata": {
+    "meta_author": "Sergei Kryukov @sergeikrk",
+    "meta_description": "Профессиональные услуги промышленных альпинистов в Ульяновске. Высокое качество, все допуски, свои инструменты, бесплатный выезд на замер."
+  },
+  "author": {
+    "name": "Sergei Kryukov @sergeikrk",
+    "bio": "Профессиональные услуги промышленных альпинистов в Ульяновске. Высокое качество, все допуски, свои инструменты, бесплатный выезд на замер."
+  }
+}

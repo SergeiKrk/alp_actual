@@ -1,0 +1,25 @@
+---
+import Base from '@layouts/Base.astro';
+import { getEntryBySlug } from 'astro:content';
+import Intro from '@components/Intro.astro';
+import Services from '@components/Services.astro';
+import Testimonials from '@components/Testimonials.astro';
+import Features from '@components/Features.astro';
+import Banners from '@components/Banners.astro';
+import Splash from '@components/Splash.astro';
+// import ContactMenu from '@components/ContactMenu.astro';
+
+const homepage = await getEntryBySlug('homepage', 'index');
+const { intro, services, testimonials, features, banners } = homepage.data;
+---
+
+<Base>
+  <Splash />
+  <div class="px-4 py-32 md:px-8">
+    <Intro {intro} />
+    <Services {services} />
+    <Testimonials {testimonials} />
+    <Features {features} />
+    <Banners {banners} />
+  </div>
+</Base>

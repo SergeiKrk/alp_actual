@@ -1,0 +1,94 @@
+{
+  "main": [
+    {
+      "name": "Услуги",
+      "url": "/uslugi"
+    },
+    {
+      "name": "Виды услуг",
+      "url": "",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Ремонт межпанельных швов",
+          "url": "/remont-shvov"
+        },
+        {
+          "name": "Утепление стен снаружи",
+          "url": "/uteplenie-fasada"
+        },
+        {
+          "name": "Герметизация балконов и окон",
+          "url": "/germetizaciya-balkonov"
+        },
+        {
+          "name": "Высотная мойка фасадов и окон",
+          "url": "/myte-fasadov-i-okon"
+        },
+        {
+          "name": "Уборка снега с крыш",
+          "url": "/ochistka-krysh-ot-snega"
+        },
+
+        {
+          "name": "Фасадные работы",
+          "url": "/fasadnye-raboty"
+        },
+
+        {
+          "name": "Кровельные работы",
+          "url": "/remont-krovli"
+        },
+
+        {
+          "name": "Монтаж водосточной системы",
+          "url": "/montazh-vodostochnoj-sistemy"
+        },
+
+        {
+          "name": "Гидроизоляция трубы на крыше",
+          "url": "/germetizaciya-truby-na-kryshe"
+        },
+
+        {
+          "name": "Покраска металлоконструкций",
+          "url": "/pokraska-metallokonstrukcij"
+        },
+
+        {
+          "name": "Пескоструйная очистка металла",
+          "url": "/peskostrujnaya-ochistka-metalla"
+        },
+
+        {
+          "name": "Монтаж снегозадержателей",
+          "url": "/montazh-snegozaderzhatelej"
+        },
+
+        {
+          "name": "Монтаж греющего кабеля",
+          "url": "/montazh-greyushchego-kabelya"
+        },
+
+        {
+          "name": "Монтаж наружной рекламы",
+          "url": "/montazh-demontazh-naruzhnoj-reklamy"
+        },
+
+        {
+          "name": "Обслуживание элеваторов",
+          "url": "/obsluzhivanie-ehlevatorov"
+        },
+
+        {
+          "name": "Монтажные работы",
+          "url": "/montazhnye-raboty"
+        }
+      ]
+    },
+    {
+      "name": "О нас",
+      "url": "/about"
+    }
+  ]
+}
