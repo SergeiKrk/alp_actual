@@ -13,8 +13,8 @@ require 'libs/PHPMailer/src/SMTP.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Получаем данные из формы
     $formName = isset($_POST['FormName']) ? htmlspecialchars(trim($_POST['FormName'])) : 'Без имени';
-    $nameUser = isset($_POST['NameUser']) ? htmlspecialchars(trim($_POST['NameUser'])) : '';
-    $formPhone = isset($_POST['FormPhone']) ? htmlspecialchars(trim($_POST['FormPhone'])) : '';
+    $nameUser = isset($_POST['Имя']) ? htmlspecialchars(trim($_POST['Имя'])) : '';
+    $formPhone = isset($_POST['Телефон']) ? htmlspecialchars(trim($_POST['Телефон'])) : '';
 
     // Создаем тело письма
     $body = "<h3>Заявка с формы: {$formName}</h3>";
